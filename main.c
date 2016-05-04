@@ -12,7 +12,44 @@ struct no{
   int info;
 };
 
-void insere_inicio(struct no*cabeca);insere_inicio(struct no *cabeca){
+int main(int argc, char *argv[]) {
+setlocale(LC_ALL,"portuguese");
+	int tecla = 0;
+	struct no *cabeca;
+	 
+	
+	do{
+		menuPrincipal();
+		printf("Insira a opcao ->");
+		scanf("%d",&tecla);
+		menuPrincipal();
+		
+		switch(tecla){
+			case 1:{
+				insere_inicio(&cabeca);
+				break;
+			}
+			 
+		}
+	}while(tecla != 9);
+   
+}
+
+/*
+ 	Menu principal é responsável por printar
+ 	na tela, todas as opções disponíveis
+*/
+void menuPrincipal(){
+	system("cls");
+	printf("--- Lista Circular ---\n\n");
+	printf("1) Inserir Inicio\n");
+	printf("2) Listar\n");
+	printf("3) Listar reverso\n");
+	printf("4) Inserir no final\n");
+	printf("\n9) Sair\n\n");
+}
+
+void insere_inicio(struct no *cabeca){
 	
 	int x = 0;
 	scanf("%d",&x);
